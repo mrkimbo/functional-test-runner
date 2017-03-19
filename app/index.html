@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App</title>
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    a.selected {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="#Home">Home</a>
+  <a href="#About">About</a>
+  <a href="#Contact">Contact</a>
+</nav>
+<h2></h2>
+<script>
+  function onload() {
+    const page = location.hash.substr(1);
+    document.querySelector('h2').textContent = page;
+
+    // clear all selected items:
+    Array.from(document.querySelectorAll(`nav a`)).forEach((el) => el.classList.remove('selected'));
+
+    let pageLink = document.querySelector(`nav a[href$='${location.hash}'`);
+    pageLink && pageLink.classList.add('selected');
+  }
+
+  window.addEventListener('hashchange', onload);
+  window.addEventListener('load', onload);
+</script>
+</body>
+</html>

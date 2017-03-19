@@ -1,0 +1,22 @@
+{
+  "name": "functional-test-runner",
+  "version": "1.0.0",
+  "description": "Experiment to create a browser based functional test runner",
+  "main": "runner/start.js",
+  "scripts": {
+    "test": "node ./runner/start.js"
+  },
+  "runner-config": {
+    "app-root": "app/",
+    "test": "test/**/*.js"
+  },
+  "author": "Kim Holland <kim@kimmr.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.2",
+    "glob-expand": "^0.2.1",
+    "jasmine": "^2.5.3",
+    "openurl": "^1.1.1",
+    "underscore": "^1.8.3"
+  }
+}
